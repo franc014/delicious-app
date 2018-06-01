@@ -1,0 +1,7 @@
+extends layout
+block content
+    div.greeting.big
+        - const nameUpper = name.toUpperCase();
+        p Hello #{nameUpper}. Your age is #{age}
+            a(href='/gallery') Gallery 
+        img.little-image(src='/public/images/icons/doughnut.png' alt=`${name}-${age}`)
