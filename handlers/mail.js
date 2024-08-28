@@ -28,13 +28,13 @@ exports.send = async (options) => {
   const html = generateHTML(options.filename, options);
   const text = htmlToText.fromString(html);
 
-  const mailOptions = {
-    from: `JA <noreply@ja.com>`,
+  const mailOpt = {
+    from: `Francisco Andrade A. <jfandtec@gmail.com>`,
     to: options.user.email,
     subject: options.subject,
     html,
     text,
   };
   const sendMail = promisify(transport.sendMail, transport);
-  return sendMail(mailOptions);
+  return sendMail(mailOpt);
 };
